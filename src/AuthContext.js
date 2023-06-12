@@ -1,4 +1,4 @@
-import React, {createContext} from 'react';
+import React, {createContext, useState} from 'react';
 
 export const AuthContext = createContext(null);
 
@@ -24,7 +24,6 @@ function AuthContextProvider({children}) {
     return (
         <AuthContext.Provider value={contextData}>
             {children}
-            {/*hier komt component die om eigen provider wordt gewikkeld*/}
         </AuthContext.Provider>
     )
 }

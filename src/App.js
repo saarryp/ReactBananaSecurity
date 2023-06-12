@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import {Route, Switch } from 'react-router-dom';
+import {Route, Switch, Redirect } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Profile from './pages/Profile';
 import Home from './pages/Home';
@@ -11,7 +11,7 @@ import {AuthContext} from "./AuthContext";
 
 
 function App() {
-  const { isAuth }= useContext(AuthContext);
+  const { isAuth } = useContext(AuthContext);
 
   return (
     <>
@@ -22,7 +22,7 @@ function App() {
             <Home />
           </Route>
           <Route path="/profile">
-            <Profile />
+            {isAuth ? <Profile /> : <Redirect to="/" />}
           </Route>
           <Route exact path="/signin">
             <SignIn />
