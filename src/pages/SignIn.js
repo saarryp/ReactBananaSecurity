@@ -14,18 +14,20 @@ function SignIn() {
         }
   return (
     <>
-      <h1>Inloggen</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias cum debitis dolor dolore fuga id molestias qui quo unde?</p>
-        <button onClick={handleLogin}></button>
-        <button onClick={handleLogout}></button>
-      <form onSubmit={handleLogin}>
-        <p>*invoervelden*</p>
-        <button type="submit">Inloggen</button>
-      </form>
+        <h1>Inloggen</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias cum debitis dolor dolore fuga id molestias qui quo unde?</p>
 
-      <p>Heb je nog geen account? <Link to="/signup">Registreer</Link> je dan eerst.</p>
+        <form onSubmit={handleLogin}>
+
+            <p>*invoervelden*</p>
+            <button type="submit"onClick={handleLogin}>Inloggen</button>
+        </form>
+        <p>Heb je nog geen account? <Link to="/signup">Registreer</Link> je dan eerst.</p>
     </>
   );
 }
 
 export default SignIn;
+
+
+// <button onClick={handleLogout}>LogOut</button>
