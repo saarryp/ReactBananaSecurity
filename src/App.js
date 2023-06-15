@@ -13,6 +13,7 @@ import {AuthContext} from "./AuthContext";
 function App() {
   const { isAuth } = useContext(AuthContext);
 
+
   return (
     <>
       <NavBar/>
