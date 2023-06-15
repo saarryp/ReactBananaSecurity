@@ -61,7 +61,7 @@ function SignUp() {
 
           <p>
           <button type="submit" onClick={onSubmit}>
-              registreer gebruiker Piet
+              registreer hier
           </button>
 
         </p>

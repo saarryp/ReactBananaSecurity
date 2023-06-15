@@ -1,7 +1,9 @@
 import React, {createContext} from 'react';
 import {useHistory} from "react-router-dom";
+import jwt_decode from "jwt-decode";
+import axios from "axios";
 
-export const AuthContext = createContext(null);
+export const AuthContext = createContext({});
 
 function AuthContextProvider({children}) {
     const [isAuth, setIsAuth] = React.useState(
