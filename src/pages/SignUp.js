@@ -6,9 +6,9 @@ import axios from 'axios';
 function SignUp() {
     const [registerSucces, setRegisterSucces] = useState(false);
     const [formData, setFormData] = useState({
-        username: '',
-        email: '',
-        password: '',
+        username: 'pietpieters',
+        email: 'pietpieters@novi.nl',
+        password: '123456',
     })
 
     const {username, email, password} = formData;
@@ -18,7 +18,7 @@ function SignUp() {
 
     async function onSubmit(){
         try {
-            const response = await axios.post('http://localhost:3000/register,',
+            const response = await axios.post('http://localhost:3000/register',
                 {
                 email,
                 password,
@@ -43,7 +43,8 @@ function SignUp() {
             placeholder="gebruikersnaam"
             name="username"
             value={username}
-            onChange={handleChange}/>
+            onChange={handleChange}
+          />
           <input
               type="email"
               placeholder="E-mailadres"
@@ -67,7 +68,7 @@ function SignUp() {
         </p>
               <p>
           {registerSucces && <p className="succes"> Gebruiker is succesvol aangemaakt</p>}
-                  Heb je al een account? Je kunt je <Link to="/signin">hier</Link> inloggen.</p>
+                  Heb je al een account? Je kunt je <Link to="/Signin">hier</Link> inloggen.</p>
       </form>
 
     </>

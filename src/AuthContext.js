@@ -1,7 +1,6 @@
 import React, {createContext} from 'react';
 import {useHistory} from "react-router-dom";
-import jwt_decode from "jwt-decode";
-import axios from "axios";
+
 
 export const AuthContext = createContext({});
 
@@ -14,17 +13,18 @@ function AuthContextProvider({children}) {
 
     // pakt UseNavigate niet, krijg error
 
-    function login() {
+    function login(token) {
         // we krijgen een token aangeleverd uit backend (dit is wat de context gaat doen)
         // token in de local storage plaatsen
+        console.log(token)
         console.log('Gebruiker is ingelogd!')
         // informatie in de state plaatsen
         // authetification op true zetten
         setIsAuth({
             isAuthenticated: true,
             user: {
-                username: 'AdrieSpek',
-                    email:'spek@gmail.com'
+                username: 'pietpieters',
+                    email:'pietpieters@novi.nl'
             }
         });
         history.push('/profile')

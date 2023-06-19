@@ -25,17 +25,19 @@ async function handleSubmit(e) {
     try {
         const result = await axios.post('http://localhost:3000/login',
             {
-                email:email,
+                email: email,
                 password: password,
             });
-        console.log(result.data);
-        login(result.data.accessToken)
+        // console.log(result.data);
+        // login(result.data.accessToken);
+        handleSubmit(result.data.accessToken)
+
         } catch (error) {
         console.error(e);
         toggleError(true)
         }
     }
-//                 roep de Loginfunctie van de context aan zodat de rest geregeld kan worden
+//  roep de Loginfunctie van de context aan zodat de rest geregeld kan worden
 
   //       postrequest om de ingevulde gegevens naar backend te sturen doen we hier. Dan krijgen we een token en die geven we aan de Context
   return (
